@@ -30,12 +30,14 @@ public class ThirdPersonMovement : MonoBehaviour
     Animator s_Animator;
     public bool movingNow;
     
-    
+    public int currentHealth;
+    public int maxHealth;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         s_Animator = gameObject.GetComponent<Animator>();
+        currentHealth = maxHealth;
     }
     // Update is called once per frame
     void Update()
@@ -123,6 +125,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
         
     }
+
+    public void HurtPlayer(int damage)
+   {
+       currentHealth -= damage;
+    
+   }
 
 
     
