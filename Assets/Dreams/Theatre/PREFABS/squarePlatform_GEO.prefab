@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 606084601093109038}
   - component: {fileID: 3426616933488640484}
   - component: {fileID: 6044519778638653274}
+  - component: {fileID: 3816701804710529963}
   m_Layer: 6
   m_Name: squarePlatform_GEO
   m_TagString: Untagged
@@ -91,8 +92,21 @@ MeshCollider:
   m_GameObject: {fileID: 3786741694607810609}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8194670537481722233, guid: 3bb48b22e93299347a5852a2451675ec, type: 3}
+--- !u!65 &3816701804710529963
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3786741694607810609}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014916962, y: 0.0029834048, z: 0.01199701}
+  m_Center: {x: -4.656608e-10, y: 1.7462298e-10, z: -0.000010571911}

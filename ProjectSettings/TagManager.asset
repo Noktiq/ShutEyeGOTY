@@ -8,6 +8,7 @@ TagManager:
   - String
   - Frame
   - Balloon
+  - curtain
   layers:
   - Default
   - TransparentFX

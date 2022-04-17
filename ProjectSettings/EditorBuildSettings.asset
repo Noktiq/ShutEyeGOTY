@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/OfficeLevel.unity
-    guid: eeb413c05b4df2c4b823755fa641d345
-  - enabled: 1
     path: Assets/Scenes/Hub.unity
     guid: d9326f00f8ccbb94ab50d671aaaecbdc
+  - enabled: 1
+    path: Assets/Scenes/OfficeLevel.unity
+    guid: eeb413c05b4df2c4b823755fa641d345
   - enabled: 1
     path: Assets/Scenes/PlatformerDream.unity
     guid: 6125eea2b8fadde4086e8cdaa4b8bea5

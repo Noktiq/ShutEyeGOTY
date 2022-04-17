@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2177292219931911759}
   - component: {fileID: 4166881841092203141}
   - component: {fileID: -8087300060770828878}
+  - component: {fileID: 249977569585306473}
   m_Layer: 6
   m_Name: pinCushion_GEO
   m_TagString: Untagged
@@ -103,8 +104,21 @@ MeshCollider:
   m_GameObject: {fileID: 2509420357920502608}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3883178096490337174, guid: 351899ffa0898c64cbce4146df92a7c4, type: 3}
+--- !u!65 &249977569585306473
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509420357920502608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0121745, y: 0.22581951, z: 0.99354786}
+  m_Center: {x: 0.0044632037, y: -0.050834093, z: 0.019833948}

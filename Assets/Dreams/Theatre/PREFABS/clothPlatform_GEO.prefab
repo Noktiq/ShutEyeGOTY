@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9020343824702863197}
   - component: {fileID: 6542117976254808983}
   - component: {fileID: 3697332857402500632}
+  - component: {fileID: 4007833736821862350}
   m_Layer: 6
   m_Name: clothPlatform_GEO
   m_TagString: Untagged
@@ -91,8 +92,21 @@ MeshCollider:
   m_GameObject: {fileID: 4740805875595354690}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3761101738078722409, guid: 908fbaad72873a24ba7efc486b693dfb, type: 3}
+--- !u!65 &4007833736821862350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740805875595354690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.385173, y: 1.2720791, z: 5.445938}
+  m_Center: {x: 0.07064295, y: 0, z: 0.08499813}

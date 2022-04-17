@@ -19686,8 +19686,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 0}
   possibleCharacters:
-  - {fileID: 865300627}
   - {fileID: 1047975476}
+  - {fileID: 865300627}
   whichCharacter: 0
   cam: {fileID: 1323080051}
 --- !u!4 &2139305887

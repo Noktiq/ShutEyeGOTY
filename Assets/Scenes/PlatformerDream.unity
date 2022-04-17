@@ -758,6 +758,7 @@ GameObject:
   - component: {fileID: 100407788}
   - component: {fileID: 100407792}
   - component: {fileID: 100407791}
+  - component: {fileID: 100407793}
   m_Layer: 0
   m_Name: CM StateDrivenCamera1
   m_TagString: Untagged
@@ -861,8 +862,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50.67852, y: 26.13714, z: 28.03621}
-  m_Center: {x: 42.863865, y: -4.053403, z: 0.18078423}
+  m_Size: {x: 50.67852, y: 13.17412, z: 28.03621}
+  m_Center: {x: 42.863865, y: 2.4281073, z: 0.18078423}
 --- !u!114 &100407792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,6 +876,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d141462db854674ea4d23702d4d65b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &100407793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100407787}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 69.03145, y: 16.519028, z: 35.861835}
+  m_Center: {x: 113.89919, y: -24.282497, z: -8.961805}
 --- !u!1001 &103098435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4653,7 +4667,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558464182}
-  m_LocalRotation: {x: 0.043946877, y: -0.32824683, z: 0.015290156, w: 0.94344527}
+  m_LocalRotation: {x: 0.043946896, y: -0.32824683, z: 0.0152901625, w: 0.94344527}
   m_LocalPosition: {x: 40, y: 9.98, z: -57.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13072,7 +13086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985451107}
   m_LocalRotation: {x: -0, y: -0, z: 0.21257378, w: 0.977145}
-  m_LocalPosition: {x: 47.3, y: 10.965, z: 9.43}
+  m_LocalPosition: {x: 44.51, y: 10.965, z: 9.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 284177858}

@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Button is working.");
-        SceneManager.LoadScene("OfficeLevel");
+        SceneManager.LoadScene("Hub");
         Time.timeScale = 1f;
     }
 
