@@ -95,11 +95,13 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if(inputX  != 0 || inputY != 0){
             movingNow = true;    
+            s_Animator.SetBool("scienceWalk", true);
             s_Animator.SetBool("isWalking", true);
             isWalking = true;
         }
         else if(inputX == 0 && inputY == 0){
             movingNow = false;   
+            s_Animator.SetBool("scienceWalk", false);
             s_Animator.SetBool("isWalking", false);
             isWalking = false;
         }

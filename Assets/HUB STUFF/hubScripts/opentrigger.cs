@@ -8,6 +8,7 @@ public class opentrigger : MonoBehaviour
     public float pickUpRange;
     public Transform player;
     AudioSource m_MyAudioSource;
+    bool curtainOpened;
     
     
     
@@ -17,6 +18,7 @@ public class opentrigger : MonoBehaviour
     {
         curtainAnimator = gameObject.GetComponent<Animator>();
        m_MyAudioSource = GetComponent<AudioSource>();
+       curtainOpened = false;
         
     }
 
@@ -24,11 +26,12 @@ public class opentrigger : MonoBehaviour
     void Update()
     {
          Vector3 distanceToPlayer = player.position - transform.position;
-         if(distanceToPlayer.magnitude <= pickUpRange && (Input.GetKeyDown(KeyCode.E)))
+         if(distanceToPlayer.magnitude <= pickUpRange && (Input.GetKeyDown(KeyCode.E) && curtainOpened == false))
          {
              curtainAnimator.SetBool("buttonPressed", true);
             gameObject.GetComponent<BoxCollider>().enabled = false;
             m_MyAudioSource.Play();
+            curtainOpened = true;
             
             Debug.Log("WORKING");
 
