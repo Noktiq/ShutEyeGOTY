@@ -115,11 +115,11 @@ public class ThirdPersonMovement1 : MonoBehaviour
 
         string sceneName = currentScene.name;
 
-            if (Input.GetButtonDown("Fire2") && (sceneName != "Hub") && (sceneName != "HubReturn") )
-        {
-            SceneManager.LoadScene("HubReturn");
-            Debug.Log("HubReturn");
-        }
+        //     if (Input.GetButtonDown("Fire2") && (sceneName != "Hub") && (sceneName != "HubReturn") )
+        // {
+        //     SceneManager.LoadScene("HubReturn");
+        //     Debug.Log("HubReturn");
+        // }
 
         
     }

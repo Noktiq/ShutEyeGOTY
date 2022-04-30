@@ -11,6 +11,7 @@ public class PCMachineUI : MonoBehaviour
     public GameObject player;
     public bool PortalActivated;
     AudioSource beep;
+    public GameObject dotCanvas;
     
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class PCMachineUI : MonoBehaviour
         player.SetActive(true);
         CelesteUI.SetActive(false);
         Cursor.visible = false;
+        dotCanvas.SetActive(true);
           Cursor.lockState = CursorLockMode.None;
           beep.Play();
         

@@ -6,6 +6,10 @@ public class CinemachineSwitcher : MonoBehaviour
 {
 
     private Animator animator;
+    public Texture2D cursorTexture;
+    public Texture2D defaultCursor;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
 
 
     private void Awake()
@@ -20,6 +24,7 @@ public class CinemachineSwitcher : MonoBehaviour
              animator.Play("2DCam");
              Cursor.visible = true;
              Cursor.lockState = CursorLockMode.None;
+              Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
          }
         
      }
@@ -31,6 +36,7 @@ public class CinemachineSwitcher : MonoBehaviour
              animator.Play("ThirdPersonCam");
              Cursor.visible = false;
              Cursor.lockState = CursorLockMode.Locked;
+             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
          }
          
      }

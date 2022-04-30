@@ -44,7 +44,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Dreams/Theatre/EndingCelCutscene.unity
+    guid: 16cbb0771f0f71f4d98aec8bb7142ef0
+  - enabled: 1
+    path: Assets/Scenes/IntroCutscene.unity
+    guid: 5eeebf16cc2d62445b1f5c4c8d66e926
   - enabled: 1
     path: Assets/Scenes/HubReturn.unity
-    guid: 00ae6bd68b5cbd645aa80ad2320eac22
+    guid: 2bb88c8d64fb84749b581dee2c258692
   m_configObjects: {}

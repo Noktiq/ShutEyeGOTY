@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Button is working.");
-        SceneManager.LoadScene("Hub");
+        SceneManager.LoadScene("IntroCutscene");
         Time.timeScale = 1f;
     }
 

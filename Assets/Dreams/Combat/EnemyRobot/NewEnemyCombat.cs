@@ -14,6 +14,7 @@ public class NewEnemyCombat : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
 
     public float health;
+    //public int damageDealt = 1;
 
     //Patroling
     public Vector3 walkPoint;
@@ -30,8 +31,18 @@ public class NewEnemyCombat : MonoBehaviour
     public bool playerInSightRange, playerInAttackRange;
 
     public BigEnemyRobot script;
-    public int damageDealt = 1;
+    //public int damageDealt = 0;
 
+    public int damageDealt = 1;
+    public bool enemyAttackedNowWait;
+    public Animator EnemyAnimator;
+    public stayInside script2;
+
+    void Start()
+    {
+        EnemyAnimator = gameObject.GetComponent<Animator>();
+    }
+    
     private void Awake()
     {
         player = GameObject.Find("VictorRobotIdleAnim").transform;
@@ -45,7 +56,7 @@ public class NewEnemyCombat : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange && script.enemyKnocked == false) ChasePlayer();
+        if (playerInSightRange && !playerInAttackRange && script.enemyKnocked == false && script2.playerInside == true) ChasePlayer();
         if (playerInAttackRange && playerInSightRange && script.enemyKnocked == false) AttackPlayer(attackHitbox[0]);
     }
 
@@ -82,6 +93,9 @@ public class NewEnemyCombat : MonoBehaviour
         // if(script.enemyKnocked == false)
         // {
         agent.SetDestination(player.position);
+
+        
+
         //  } 
   }
 
@@ -103,8 +117,6 @@ public class NewEnemyCombat : MonoBehaviour
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
             Debug.Log("Oochie Ouchie");
-
-            
         }
     }
     private void ResetAttack()
@@ -117,6 +129,7 @@ public class NewEnemyCombat : MonoBehaviour
         health -= damage;
 
         if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        // VictorAnimator.SetBool("Punched", true);
     }
     private void DestroyEnemy()
     {
@@ -130,6 +143,48 @@ public class NewEnemyCombat : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
+
+
+
+
+
+    void OnTriggerStay(Collider other)
+    {
+
+        if(other.gameObject.tag =="Player")
+        {
+            if(enemyAttackedNowWait == false)
+            {
+                if(script.enemyKnocked == false)
+                {
+            StartCoroutine(waitToHurt());
+                }
+            }
+        }
+    }
+
+    IEnumerator waitToHurt()
+    {
+        if(script.enemyKnocked == false)
+        {
+        FindObjectOfType<PlayerCombat>().EnemyRobotHurtPlayer(damageDealt);
+        enemyAttackedNowWait = true;
+        StartCoroutine(waitToHurtAnim());
+        yield return new WaitForSeconds(2);
+        enemyAttackedNowWait = false;
+        }
+    }
+
+    IEnumerator waitToHurtAnim()
+    {
+        EnemyAnimator.SetBool("EnemyPunch", true);
+        yield return new WaitForSeconds(.4f);
+        EnemyAnimator.SetBool("EnemyPunch", false);
+
+    }
+
+   
+
 
 
 }

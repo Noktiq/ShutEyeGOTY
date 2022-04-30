@@ -10,6 +10,7 @@ public class PCMachineUI2 : MonoBehaviour
     public bool PortalActivated2;
     public GameObject BernardPortal;
     public GameObject player;
+    public GameObject dotCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,7 @@ public class PCMachineUI2 : MonoBehaviour
         BernardUI.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.None;
+        dotCanvas.SetActive(true);
         
     }
 }

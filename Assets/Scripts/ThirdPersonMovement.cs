@@ -30,6 +30,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool playerJumping;
     Animator s_Animator;
     public bool movingNow;
+    public bool BooActivate;
     
     public GameObject Player;
 
@@ -43,6 +44,8 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public killPlatformerEnemy script2;
     public killPlatformerEnemy script3;
+    public killPlatformerEnemy script4;
+    public killPlatformerEnemy script5;
 
     
     public int currentHealth;
@@ -167,7 +170,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
 
 
-        if(script.enemyKilled == true || script2.enemyKilled == true || script3.enemyKilled == true)
+        if(script.enemyKilled == true || script2.enemyKilled == true || script3.enemyKilled == true || script4.enemyKilled == true || script5.enemyKilled == true)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
             Debug.Log("attempting to bounce");
@@ -222,6 +225,7 @@ public class ThirdPersonMovement : MonoBehaviour
        if (currentHealth <=0)
        {
            SceneManager.LoadScene("PlatformerDream");
+           //BooActivate = true;
        }
     }
 

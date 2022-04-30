@@ -13,6 +13,7 @@ public class HubScreenSwitcher : MonoBehaviour
     public PCMachineUI2 script3;
     public float pickUpRange;
     public Transform playerTrans;
+    public GameObject dotCanvas;
 
     void Update ()
     {
@@ -78,6 +79,7 @@ public class HubScreenSwitcher : MonoBehaviour
            Cursor.visible = true;
           Cursor.lockState = CursorLockMode.None;
           player.SetActive(false);
+          dotCanvas.SetActive(false);
           PcCanvas.SetActive(true);
 
       }

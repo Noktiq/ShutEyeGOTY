@@ -15,7 +15,7 @@ public class TeleportToCombat : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-         SceneManager.LoadScene("HubReturn");
+         SceneManager.LoadScene("EndingCelCutscene");
         }
     }
 }

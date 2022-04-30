@@ -10,9 +10,9 @@ public class BigEnemyRobot : MonoBehaviour
     public int BigcurrentHealth;
     public Transform player;
 
-   // public Transform attackPoint;
-    public float attackRange = 0.5f;
-    public int attackDamage = 20;
+    // public Transform attackPoint;
+    // public float attackRange = 0.5f;
+    // public int attackDamage = 20;
     
     public LayerMask playerLayers;
     Animator EnemyAnimator;
@@ -63,7 +63,8 @@ public class BigEnemyRobot : MonoBehaviour
         
         //Debug.Log("THATSHITHURTED");
         EnemyAnimator.SetBool("EnemyHurt", true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.3f);
+        EnemyAnimator.SetBool("EnemyHurt", false);
     }
 
     void Attack()
@@ -92,11 +93,11 @@ public class BigEnemyRobot : MonoBehaviour
         enemyKnocked = true;
     }
 
-    void OnDrawGizmosSelected()
-    {
-        // if (attackPoint == null)
-        //     return;
+    // void OnDrawGizmosSelected()
+    // {
+    //     if (attackPoint == null)
+    //         return;
 
-        // Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
+    //     Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    // }
 }

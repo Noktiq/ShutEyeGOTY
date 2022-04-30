@@ -11,11 +11,15 @@ public class HurtPlayer : MonoBehaviour
     public Transform player;
     public bool AttackednowWait;
     public cameraShake CameraShake;
+    public bool enemyAttackedtrigger;
+    AudioSource biteSound;
 
     // Start is called before the first frame update
     void Start()
     {
        EnemyAnimator = gameObject.GetComponent<Animator>();
+       enemyAttackedtrigger = false;
+       biteSound= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,7 +31,9 @@ public class HurtPlayer : MonoBehaviour
             EnemyAnimator.SetBool("enemyAttacked", false);
 
          }
+         //enemyAttackedtrigger = false;
     }
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -39,6 +45,7 @@ public class HurtPlayer : MonoBehaviour
             // FindObjectOfType<ThirdPersonMovement>().HurtPlayer(damageDealt);
             // EnemyAnimator.SetBool("enemyAttacked", true);
             StartCoroutine(waitBeforeHit());
+            
            
             }
         }
@@ -47,12 +54,17 @@ public class HurtPlayer : MonoBehaviour
 
     IEnumerator waitBeforeHit()
     {
+        
+        Debug.Log("SFXPLAY");
         FindObjectOfType<ThirdPersonMovement>().HurtPlayer(damageDealt);
         EnemyAnimator.SetBool("enemyAttacked", true);
+        enemyAttackedtrigger = true;
         AttackednowWait = true;
+        biteSound.Play();
         StartCoroutine(CameraShake.Shake(.4f, .09f));
         yield return new WaitForSeconds(1);
         AttackednowWait = false;
+        enemyAttackedtrigger = false;
 
     }
 

@@ -11,12 +11,15 @@ public class openMiniFridge : MonoBehaviour
     public bool fridgeOpened;
     public bool fridgeClosed;
     public GameObject InteractUI;
+    AudioSource fridgeOpening;
+    public bool fridgeOpenedNowWait;
     // Start is called before the first frame update
     void Start()
     {
         FridgeAnimator = gameObject.GetComponent<Animator>();
         fridgeOpened = false;
         fridgeClosed = true;
+        fridgeOpening= GetComponent<AudioSource>();
     }
 
     public void OnTriggerEnter()
@@ -61,9 +64,15 @@ public class openMiniFridge : MonoBehaviour
 
          IEnumerator waitbeforeclose()
          {
+             if(fridgeOpenedNowWait == false)
+             {
+             fridgeOpening.Play();
+             }
              FridgeAnimator.SetBool("fridgeOpened", true);
+             fridgeOpenedNowWait = true;
              yield return new WaitForSeconds(7);
              FridgeAnimator.SetBool("fridgeOpened", false);
+             fridgeOpenedNowWait = false;
              fridgeClosed = true;
              fridgeOpened = false;
          }

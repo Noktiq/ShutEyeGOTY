@@ -19,7 +19,7 @@ public class PlayerGrow : MonoBehaviour
 
      if (Input.GetButtonDown("Fire3")) 
      {
-         transform.localScale = new Vector3 (2.0f, 2.0f, 2.0f);
+         transform.localScale = new Vector3 (2.5f, 2.5f, 2.5f);
          transform.localPosition = new Vector3(0f,5f,0f);
          isBig = true;
      } 

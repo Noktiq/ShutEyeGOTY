@@ -10,6 +10,7 @@ public class PCMachineUI1 : MonoBehaviour
     public GameObject VictorPortal;
     public GameObject player;
     public bool PortalActivated1;
+    public GameObject dotCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +45,7 @@ public class PCMachineUI1 : MonoBehaviour
         player.SetActive(true);
         VictorUI.SetActive(false);
         Cursor.visible = false;
+        dotCanvas.SetActive(true);
           Cursor.lockState = CursorLockMode.None;
         
     }

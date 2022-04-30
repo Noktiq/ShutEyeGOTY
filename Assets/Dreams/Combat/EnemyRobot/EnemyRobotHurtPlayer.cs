@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnemyRobotHurtPlayer : MonoBehaviour
 {
-    public int damageDealt = 1;
+    public int damageDealt = 253;
     public float pickUpRange;
     public Transform player;
+    public 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Debug.Log(FindObjectsOfType<PlayerCombat>().EnemyRobotHurtPlayer.Length);
     }
 
     // Update is called once per frame
@@ -25,11 +26,12 @@ public class EnemyRobotHurtPlayer : MonoBehaviour
 
     }
 
-     void OnTriggerEnter(Collider other)
+     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
             FindObjectOfType<PlayerCombat>().EnemyRobotHurtPlayer(damageDealt);
+            //Debug.Log("Oochie Ouchie");
         }
     }
 
